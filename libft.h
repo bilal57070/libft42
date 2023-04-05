@@ -6,7 +6,7 @@
 /*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:46:08 by bsafi             #+#    #+#             */
-/*   Updated: 2023/04/04 18:36:19 by bsafi            ###   ########.fr       */
+/*   Updated: 2023/04/05 15:59:59 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,7 @@ char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+char	**ft_split(char const *s, char c);
 
 #endif
