@@ -6,7 +6,7 @@
 #    By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/29 18:06:23 by bsafi             #+#    #+#              #
-#    Updated: 2023/04/05 16:03:40 by bsafi            ###   ########.fr        #
+#    Updated: 2023/04/06 16:47:31 by bsafi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,10 +18,11 @@ SRCS = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c 
 		ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 		ft_split.c \
 
-#SRCSB = 
+SRCSB = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+		ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 
 OBJS = ${SRCS:.c=.o}
-#OBJSB = ${SRCSB:.c=.o}
+OBJSB = ${SRCSB:.c=.o}
 NAME = libft.a
 LIBC = ar rcs
 CC = gcc
@@ -36,13 +37,15 @@ ${NAME}: ${OBJS}
 
 all: ${NAME}
 
-#bonus: ${NAME} ${OBJSB}
-#		${LIBC} ${NAME} ${OBJSB}
+bonus: ${NAME} ${OBJSB}
+		${LIBC} ${NAME} ${OBJSB}
 
 clean:
-		${RM} ${OBJS}
+		${RM} ${OBJS} ${OBJSB}
 
 fclean: clean
 		${RM} ${NAME}
 
 re: fclean all
+
+.PHONY : all bonus clean fclean re 
