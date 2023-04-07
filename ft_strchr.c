@@ -6,7 +6,7 @@
 /*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:28:29 by bsafi             #+#    #+#             */
-/*   Updated: 2023/03/31 16:32:51 by bsafi            ###   ########.fr       */
+/*   Updated: 2023/04/07 14:49:27 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ char	*ft_strchr(const char *s, int c)
 /*
 int	main()
 {
-	char *s = "helt4d";
+	char *s = "hel880t4d";
 
-	printf("%s\n", ft_strchr(s, 't' + 256));
-	printf("%s\n", strchr(s, 't' + 256));
+	printf("%s\n", ft_strchr(s, '8' + 0));
+	printf("%s\n", strrchr(s, '8' + 0));
 }*/

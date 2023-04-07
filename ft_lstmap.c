@@ -6,7 +6,7 @@
 /*   By: bsafi <bsafi@student.42nice.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:46:24 by bsafi             #+#    #+#             */
-/*   Updated: 2023/04/06 17:41:28 by bsafi            ###   ########.fr       */
+/*   Updated: 2023/04/07 15:42:32 by bsafi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,21 @@
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*nvlst;
+	t_list	*tmp;
 
-	nvlst = malloc(sizeof(t_list));
 	if (!lst)
 		return (0);
-	if (!nvlst)
-		return (0);
+	nvlst = 0;
 	while (lst)
 	{
-		f(lst->content);
-		nvlst = lst;
-		del(lst->content);
+		tmp = ft_lstnew(f(lst->content));
+		if (!tmp)
+		{
+			ft_lstclear(&tmp, (*del));
+			return (0);
+		}
+		ft_lstadd_back(&nvlst, tmp);
 		lst = lst->next;
-		nvlst = nvlst->next;
 	}
 	return (nvlst);
 }
